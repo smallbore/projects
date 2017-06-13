@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<title>tabs</title>
+	</head>
+	<style>
+		.tab{display: none;}
+		.tabs .active{display:block}
+		.tab-links .active{border-bottom:1px solid #955723; color:#955723;}
+	</style>
+	<body>
+		<div class="tab-links">
+			<a href="#tab1" class="tab-link active">项目一</a>
+			<a href="#tab2" class="tab-link">项目二</a>
+			<a href="#tab3" class="tab-link">项目三</a>
+		</div>
+		<div class="tabs">
+			<div id="tab1" class="tab active">项目一</div>
+			<div id="tab2" class="tab">项目二</div>
+			<div id="tab3" class="tab">项目三</div>
+		</div>
+	</body>
+	<script src="js/jquery-1.10.1.min.js"></script>
+	<script src="js/tabs.js"></script>
+</html>

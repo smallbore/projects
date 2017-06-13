@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<title>简易tab</title>
+		<style>
+			.tab-con { display: none;}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="tab-btn">
+				<a href="#">1</a>
+				<a href="#">1</a>
+				<a href="#">1</a>
+			</div>
+			<div class="tab-con">第一个</div>
+			<div class="tab-con">第二个</div>
+			<div class="tab-con">第三个</div>
+		</div>
+	</body>
+	<script src="js/zepto.js"></script>
+	<script>
+	$(function(){
+		$(".tab-con").eq(0).show();
+		$(".tab-btn a").click(function() {  //mousemove
+			var num = $(".tab-btn a").index(this);
+			
+			$(".tab-con").hide().eq(num).show();
+		})
+	})
+	</script>
+</html>
