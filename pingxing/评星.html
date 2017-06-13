@@ -1,0 +1,32 @@
+<!doctype html>
+<html>  
+<script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript">  
+</script>  
+<script src="rating.js" type="text/javascript"></script>  
+<script type="text/javascript">  
+  
+$(document).ready(function(){  
+//创建星星  
+InitStar(5,3,'xing_g.png','xing.png','lblStar1','txt')  
+//重写评星描述  
+  $("#txt").change(function(){  
+    var v=$(this).text();  
+    switch(v){  
+        case "1":v="太差了";break;  
+        case "2":v="有待提高";break;  
+        case "3":v="一般";break;  
+        case "4":v="不错";break;  
+        case "5":v="太棒了";break;  
+        default:v="";  
+        }  
+        $(this).text(v);  
+  });  
+});  
+  
+</script>  
+<body>    
+<label id="lblStar1"></label><span id="txt" class="col-8d8 rem-13">一般</span>
+<br>  
+  
+</body>    
+</html> 
