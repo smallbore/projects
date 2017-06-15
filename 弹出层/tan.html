@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="x5-orientation" content="portrait">
+	<link href="css/reset.css" rel="stylesheet" >
+	<title>弹框</title>
+	<style>
+/*弹框*/
+.warp-gonggao{
+	position:fixed;top:0; bottom:0;left:0;right:0;
+	background:rgba(1,1,1,.7);
+	/*display:none;*/
+	opacity:0;
+	z-index: 9;
+}
+
+.tan-overlay {
+	position:absolute;
+	top:0;left;0;
+	width: 100%;
+	height: 100%;
+}
+.tan-open,.tan-overlay {
+	/*display:block;*/
+	opacity:1;
+	pointer-events: auto;
+}
+.close-x{position:absolute;right:2px;top:2px;width:30px;height:30px;}
+.gg-box{position:absolute;top:40%;transform:translateY(-50%);margin:0 auto;left:0;right:0;width:76%;height:auto;
+text-align: center;border-radius:6px;}
+
+.gg-textbox{position:absolute;top:45%;left:0; padding: 0 14%;font-size: 14px;}
+.gg-textbox p{margin:2px 0;}
+.input-box input{padding:6px;background:none;border:1px solid #e6e8ec;border-radius: 5px;width:100%;margin:10px 0;}
+
+.textbox-btn{padding-top:10px;}
+.textbox-btn a{display:block;width:76px;height:32px;margin:0 auto;}
+.textbox-btn a.puy-btn{background:url(images/btn-bg04.png) no-repeat;background-size:100% 100%;}
+.textbox-btn a.yi-btn{background:url(images/btn-bg05.png) no-repeat;background-size:100% 100%;}
+
+.name-box{padding-top:23px;color:white;background:url(../images/a-cheng02.png) no-repeat;background-size:100% 100%;margin:5% 8%;height:56px;}
+/*弹框*/
+	</style>
+</head>
+	<body>
+		<div id="tanbtn">点击我</div>
+			<!--开通中-->
+	<div class="warp-gonggao" id="kaiting">
+		<div class="tan-overlay"></div>
+		<div class="gg-box">
+			<div class="close-x" data-dialog-close style="top:30%;right:0;"></div>
+			<img src="images/a-katong.png" style="min-height: 400px;"/>
+			<div class="gg-textbox">
+				<p>说明：为了方便收获直推玩家的 系统奖励，可以购买一键收获功能 </p>
+				<p>每个月仅需50个桃</p>
+				<p>请输入您需要开通的月数</p>
+				<div class="input-box">
+					<input type="text" placeholder="请输入月数" />
+				</div>
+				<div class="row no-gutter textbox-btn">
+					<div class="col-6">
+						<a href="#" class="puy-btn nokai" data-dialog-close ></a>
+					</div>
+					<div class="col-6">
+						<a href="#" class="yi-btn kaitong" data-dialog-close ></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--开通中-->
+	</body>
+	<script src="js/jquery-1.10.1.min.js"></script>
+	<script src="js/dialogFx.js"></script>
+	<script>
+		$(function(){
+			//开通中
+			var kaiting = new DialogFx('#kaiting');
+			var tanbtn = document.getElementById("tanbtn");
+			$('.kaiting').on('click',function(){
+				kaiting.show()
+			});
+		})
+	</script>
+</html>
