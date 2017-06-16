@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>滚动至顶部后固定</title>
+		<style type="text/css">
+			.wrapper {
+				width: 1000px;
+				height: 2000px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.header {
+				height: 150px;
+			}
+			
+			#nav_keleyi_com {
+				padding: 10px;
+				position: relative;
+				top: 0;
+				background: #125430;
+				width: 1000px;
+			}
+			
+			a {
+				display: inline-block;
+				margin: 0 10px;
+				*display: inline;
+				zoom: 1;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="header"></div>
+			<div id="nav_keleyi_com">
+				<a href="http://keleyi.com/menu/net/" target="_blank">.NET</a>
+				<a href="http://keleyi.com/menu/javascript/" target="_blank">Javascript</a>
+				<a href="http://keleyi.com/menu/jquery/" target="_blank">jQuery</a>
+				<a href="http://keleyi.com/menu/csharp/" target="_blank">C#</a>
+				<a href="http://keleyi.com/menu/other/" target="_blank">其他</a>
+				<a href="http://keleyi.com/" target="_blank">首页</a><a href="/menu/aspnet/" target="_blank">ASP.NET</a> <a href="/menu/mvc/" target="_blank">MVC</a>
+			</div>
+		</div>
+		<script src="jquery.js"></script>
+		<script>
+			$(function(){
+				function menuFixed(id){
+					var obj = $("#" + id);
+					var _getHeight = obj.offset().top; //需要浮动div离顶高度
+					console.log(_getHeight);
+					$(document).scroll(function(){
+						changePos(id,_getHeight);
+					})
+				}
+				
+				function changePos(id,height){
+					var obj = $("#"+id);
+					var scrollTop = $(document).scrollTop();
+					if (scrollTop < height) {
+						obj.css('position','relative');
+					} else {
+						obj.css('position','fixed'); //滚动条的高度大于div离顶高度 改变
+					}
+				}
+				menuFixed("nav_keleyi_com");
+			})
+		</script>
+	</body>
+
+</html>
