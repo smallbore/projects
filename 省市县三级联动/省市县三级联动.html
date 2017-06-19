@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		select {
+			padding: 5px 5px 8px;
+			line-height: 1em;
+			display: inline-block;
+		}
+	</style>
+
+	<body>
+
+		<!-- 暂无 港澳台 如需要可在city.json文件中添加-->
+		<select id="province" name="province" onchange="doProvAndCityRelation();">
+	  　　　　<option id="choosePro"value="-1">请选择您所在省份</option>
+	  　 	</select>
+
+		<select id="citys" name="city" onchange="doCityAndCountyRelation();">
+	 　　　　<option id='chooseCity' value='-1'>请选择您所在城市</option>
+	 　　</select>
+
+		<select id="county" name="county">
+	 　　　　<option id='chooseCounty' value='-1'>请选择您所在区/县</option>
+	　　</select>
+
+	</body>
+	<script src="js/jquery-1.10.1.min.js"></script>
+	<script src="js/city.js"></script>
+
+</html>
