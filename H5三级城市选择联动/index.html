@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML5手机端三级联动城市选择代码</title>
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.0/weui.min.css">  
+<style>
+  *{margin:0;padding:0;}
+  body{background:#f2f2f2;}
+</style>
+</head>
+<body>
+
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">选择地区</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="text" id="sel_city" placeholder="点击选取省市区县">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">详细地址</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="text" id="sel_city" placeholder="请输入详细地址">
+        </div>
+    </div>
+</div>
+<script src="js/picker.min.js"></script>
+<script src="js/city.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
